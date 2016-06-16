@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>zuo_ye</title>
+	<script src="jquery-1.12.4.min.js"></script>
+	<style>
+		tr td{width:100px; height:100px; border:1px solid black; text-align: center;}
+	</style>
+</head>
+<body>
+	<input type="button" value="点击抽奖"><br><br>
+	<table style="border:1px solid black">
+		<tr>
+			<td>奖品1</td>
+			<td>奖品2</td>
+			<td>奖品3</td>
+		</tr>
+		<tr>
+			<td>奖品4</td>
+			<td>奖品5</td>
+			<td>奖品6</td>
+		</tr>
+		<tr>
+			<td>奖品7</td>
+			<td>奖品8</td>
+			<td>奖品9</td>
+		</tr>
+	</table><br>
+	<div style="border:2px solid #ccc; width:60px; height:20px; font-size:20px; color:red; margin-left:150px;"></div>
+
+	<script>
+		var timer
+		$('input').click(function(){
+			clearInterval(timer);
+			var a=0
+			var s;
+			var b = Math.floor(Math.random() * 9 + 9);
+			timer = setInterval(function(){
+				for(var i = 0;i<9;i++){
+					$('td').eq(i).css('background','');
+				}
+				$('td').eq(a).css('background','blue')
+				a++;
+				if(a==9){
+					a=0
+				}
+				b--;
+				if(b == 0){
+					clearInterval(timer);
+					$('div').html($('td').eq(a-1).html());
+				}
+			},200)
+			
+		})
+	</script>
+</body>
+</html>

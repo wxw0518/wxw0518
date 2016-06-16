@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>伪类选择器</title>
+	<script src="jquery-1.12.4.min.js"></script>
+	<script>
+		$(window).load(function(){
+			$('tr:eq(4)').css('color','blue');
+			$('tr:gt(4)').css('color','green');
+			$('tr:lt(4)').css('color','red');
+			$('tr:odd').css('background','#f0f');
+			$('tr:even').css('background','yellow');
+		})
+	</script>
+</head>
+<body>
+	<table>
+		<tr><th>指定范围选择器</th><th>描述</th></tr>
+		<tr><td>:first</td><td>匹配找到的第一个元素</td></tr>
+		<tr><td>:last</td><td>匹配找到的最后一个元素</td></tr>
+		<tr><td>:even</td><td>匹配所有索引值为偶数的元素</td></tr>
+		<tr><td>:odd</td><td>匹配所有索引值为奇数的元素</td></tr>
+		<tr><td>:gt(index)</td><td>匹配所有索引大于给定索引值的元素</td></tr>
+		<tr><td>:lt(index)</td><td>匹配所有索引小于给定索引值的元素</td></tr>
+	</table>
+</body>
+</html>

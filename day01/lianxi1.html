@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>练习</title>
+	<script src="jquery-1.12.4.min.js"></script>
+	<style>
+		ul li{width:200px; height:200px; border:1px solid black; float:left; list-style: none;}
+	</style>
+</head>
+<body>
+	<input id='btn1' type="button" value="红 色">
+	<input id='btn2' type="button" value="蓝 色">
+	<input id='btn3' type="button" value="绿 色">
+	<input id='btn4' type="button" value="黄 色"><br><br>
+	<input type="button" value="清空红色">
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+	<script>
+		$(window).load(function(){
+			var color = "";
+			$('btn1').click(function(){
+				color = "red";
+			}
+			$('btn2').click(function(){
+				color = "blue";
+			}
+			$('btn3').click(function(){
+				color = "green";
+			}
+			$('btn4').click(function(){
+				color = "yellow";
+			}
+
+			$('li').click(function(){
+				$(this).css('background',color);
+			})
+		})
+	</script>
+</body>
+</html>

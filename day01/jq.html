@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.12.4.min.js"></script>
+	<style>
+		div{width:200px; height:200px; background: blue;}
+	</style>
+</head>
+<body>
+	<div id="box">dddd</div>
+	<input type="text" value="qwe">
+	<ul>
+		<li data-index="1110">a</li>
+		<li data-index="12310">b</li>
+		<li data-index="4210">c</li>
+		<li data-index="14310">d</li>
+		<li data-index="63109">e</li>
+	</ul>
+	<script>
+		// console.log($('#box').html('cccc'));
+		// console.log($('#box').attr('id','div1'));
+		//console.log($('input').val('qaz'));
+		$('div[id]').css('background','green');
+		$('li[data-index=1110]').css('fontSize','20px');
+		$('li[data-index^=1]').css('fontSize','30px');
+		$('li[data-index$=0]').css('fontSize','40px');
+		$('li[data-index*=1]').css('fontSize','50px');
+		$('li[data-index!=4210]').css('fontSize','20px');
+	</script>
+</body>
+</html>

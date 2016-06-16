@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>照敲十遍</title>
+	<script src="jquery-1.12.4.min.js"></script>
+	<style>
+		.box{
+			width: 300px;height: 300px;background: red;
+		}
+	</style>
+</head>
+<body>
+	<!-- <div class="box" style="width: 300px;height: 300px;background: red;">dddd</div>
+	<input type="text" value="123"> -->
+	<!-- <div id="box" class="box">
+		<ul>
+			<li>1选择器</li>
+			<li>2选择器</li>
+			<li>3选择器</li>
+			<li>4选择器</li>
+			<li class="child">5选择器</li>
+			<li>6选择器</li>
+		</ul>
+	</div>
+	<div>1222</div> -->
+
+
+	<!-- <div>
+		<h4>论语<div>鹅鹅鹅<div>哈哈哈</div></div></h4>
+		<div>子在川上曰：</div>
+		<div>dddd</div>
+		<div>dddd</div>
+		<p>“逝者如斯夫！</p>
+		<p>不舍昼夜。”</p>
+		<p>“逝者如斯夫！</p>
+		<p>不舍昼夜。”</p>
+	</div> -->
+	<div class="container red">
+	    <div class="content">
+	        <h2>新闻列表</h2>
+	        <ul id="newsList">
+	            <li data-index="10"><a href="#baidu">新闻一</a></li>
+	            <li data-index="110"><a href="#google">新闻二</a></li>
+	            <li data-index="119"><a href="#yahoo">新闻三</a></li>
+	            <li data-index="10086"><a href="#sougou">新闻四</a></li>
+	        </ul>
+	        <p title="新闻">新闻内容</p>
+	        <div title="新闻相关">新闻相关</div>
+	    </div>
+	</div>
+	<input type="text" id="bix" name="man">
+	<input type="text" id="box">
+	<input type="text" name="man">
+	<script>
+		// 简写
+		// $(function(){
+
+		// })
+
+		$(window).load(function(){
+			//1.基本选择器
+			//id选择器
+			// $('#box').css('fontSize','20px');
+			// //标签选择器
+			// $('div').css('background','red')
+			// //类选择器
+			// $('.child').css('background',"blue");
+			// $('*').css('border','1px solid #ccc')
+			// //群组选择器
+			// $('div,ul,li').css('background','#ccc')
+
+
+
+			//2.层级选择器
+			//包含选择器
+			//$('div div').css('background','red')
+			//子选择器
+			//$('div>div').css('background','red')
+			//相邻选择器
+			//$('h4+div').css('background','red')	
+			//兄弟选择器
+			//$('div~p').css('background','red')	
+			
+			//特定位置选择器
+			// $('li').first().css('background','red')
+			// $('li:first').css('background','red')
+			//$('li:last').css('background','red')
+			// $('li:eq(2)').css('background','red')
+			// $('li:even').css('background','red')
+			// $('li:odd').css('background','red')
+			// $('li:gt(2)').css('background','red')
+			// $('li:lt(2)').css('background','red')
+
+			//排除选择器
+			//$('li:not(.child)').css('background','red')
+
+
+			//css() attr() html() val()
+			// $('.box').css('background','blue')
+			// console.log($('.box').attr('style'))
+			// $('.box').html('aaaa')
+			// $('input').val('asdf')
+
+			//属性选择器
+			// $('ul[id]').css('fontSize','20px');//匹配包含某个属性的元素
+			// $('li[data-index="110"]').css('fontSize','30px')
+			// $('li[data-index^="1"]').css('fontSize','30px')
+			//$('li[data-index$="0"]').css('fontSize','30px')
+			//$('li[data-index*="0"]').css('fontSize','30px')
+			$('li[data-index!="10086"]').css('fontSize','30px')
+
+
+
+
+
+			// 简写
+		// $(function(){
+
+		// })
+
+		$(window).load(function(){
+			//1.基本选择器
+			//id选择器
+			// $('#box').css('fontSize','20px');
+			// //标签选择器
+			// $('div').css('background','red')
+			// //类选择器
+			// $('.child').css('background',"blue");
+			// $('*').css('border','1px solid #ccc')
+			// //群组选择器
+			// $('div,ul,li').css('background','#ccc')
+
+
+
+			//2.层级选择器
+			//包含选择器
+			//$('div div').css('background','red')
+			//子选择器
+			//$('div>div').css('background','red')
+			//相邻选择器
+			//$('h4+div').css('background','red')	
+			//兄弟选择器
+			//$('div~p').css('background','red')	
+			
+			//特定位置选择器
+			// $('li').first().css('background','red')
+			// $('li:first').css('background','red')
+			//$('li:last').css('background','red')
+			// $('li:eq(2)').css('background','red')
+			// $('li:even').css('background','red')
+			// $('li:odd').css('background','red')
+			// $('li:gt(2)').css('background','red')
+			// $('li:lt(2)').css('background','red')
+
+			//排除选择器
+			//$('li:not(.child)').css('background','red')
+
+
+			//css() attr() html() val()
+			// $('.box').css('background','blue')
+			// console.log($('.box').attr('style'))
+			// $('.box').html('aaaa')
+			// $('input').val('asdf')
+
+			//属性选择器
+			// $('ul[id]').css('fontSize','20px');//匹配包含某个属性的元素
+			// $('li[data-index="110"]').css('fontSize','30px')
+			// $('li[data-index^="1"]').css('fontSize','30px')
+			//$('li[data-index$="0"]').css('fontSize','30px')
+			//$('li[data-index*="0"]').css('fontSize','30px')
+			$('li[data-index!="10086"]').css('fontSize','30px')
+
+
+
+
+
+			// 简写
+		// $(function(){
+
+		// })
+
+		$(window).load(function(){
+			//1.基本选择器
+			//id选择器
+			// $('#box').css('fontSize','20px');
+			// //标签选择器
+			// $('div').css('background','red')
+			// //类选择器
+			// $('.child').css('background',"blue");
+			// $('*').css('border','1px solid #ccc')
+			// //群组选择器
+			// $('div,ul,li').css('background','#ccc')
+
+
+
+			//2.层级选择器
+			//包含选择器
+			//$('div div').css('background','red')
+			//子选择器
+			//$('div>div').css('background','red')
+			//相邻选择器
+			//$('h4+div').css('background','red')	
+			//兄弟选择器
+			//$('div~p').css('background','red')	
+			
+			//特定位置选择器
+			// $('li').first().css('background','red')
+			// $('li:first').css('background','red')
+			//$('li:last').css('background','red')
+			// $('li:eq(2)').css('background','red')
+			// $('li:even').css('background','red')
+			// $('li:odd').css('background','red')
+			// $('li:gt(2)').css('background','red')
+			// $('li:lt(2)').css('background','red')
+
+			//排除选择器
+			//$('li:not(.child)').css('background','red')
+
+
+			//css() attr() html() val()
+			// $('.box').css('background','blue')
+			// console.log($('.box').attr('style'))
+			// $('.box').html('aaaa')
+			// $('input').val('asdf')
+
+			//属性选择器
+			// $('ul[id]').css('fontSize','20px');//匹配包含某个属性的元素
+			// $('li[data-index="110"]').css('fontSize','30px')
+			// $('li[data-index^="1"]').css('fontSize','30px')
+			//$('li[data-index$="0"]').css('fontSize','30px')
+			//$('li[data-index*="0"]').css('fontSize','30px')
+			$('li[data-index!="10086"]').css('fontSize','30px')
+
+
+
+
+
+			// 简写
+		// $(function(){
+
+		// })
+
+		$(window).load(function(){
+			//1.基本选择器
+			//id选择器
+			// $('#box').css('fontSize','20px');
+			// //标签选择器
+			// $('div').css('background','red')
+			// //类选择器
+			// $('.child').css('background',"blue");
+			// $('*').css('border','1px solid #ccc')
+			// //群组选择器
+			// $('div,ul,li').css('background','#ccc')
+
+
+
+			//2.层级选择器
+			//包含选择器
+			//$('div div').css('background','red')
+			//子选择器
+			//$('div>div').css('background','red')
+			//相邻选择器
+			//$('h4+div').css('background','red')	
+			//兄弟选择器
+			//$('div~p').css('background','red')	
+			
+			//特定位置选择器
+			// $('li').first().css('background','red')
+			// $('li:first').css('background','red')
+			//$('li:last').css('background','red')
+			// $('li:eq(2)').css('background','red')
+			// $('li:even').css('background','red')
+			// $('li:odd').css('background','red')
+			// $('li:gt(2)').css('background','red')
+			// $('li:lt(2)').css('background','red')
+
+			//排除选择器
+			//$('li:not(.child)').css('background','red')
+
+
+			//css() attr() html() val()
+			// $('.box').css('background','blue')
+			// console.log($('.box').attr('style'))
+			// $('.box').html('aaaa')
+			// $('input').val('asdf')
+
+			//属性选择器
+			// $('ul[id]').css('fontSize','20px');//匹配包含某个属性的元素
+			// $('li[data-index="110"]').css('fontSize','30px')
+			// $('li[data-index^="1"]').css('fontSize','30px')
+			//$('li[data-index$="0"]').css('fontSize','30px')
+			//$('li[data-index*="0"]').css('fontSize','30px')
+			$('li[data-index!="10086"]').css('fontSize','30px')
+
+
+
+
+
+
+			// 简写
+		// $(function(){
+
+		// })
+
+		$(window).load(function(){
+			//1.基本选择器
+			//id选择器
+			// $('#box').css('fontSize','20px');
+			// //标签选择器
+			// $('div').css('background','red')
+			// //类选择器
+			// $('.child').css('background',"blue");
+			// $('*').css('border','1px solid #ccc')
+			// //群组选择器
+			// $('div,ul,li').css('background','#ccc')
+
+
+
+			//2.层级选择器
+			//包含选择器
+			//$('div div').css('background','red')
+			//子选择器
+			//$('div>div').css('background','red')
+			//相邻选择器
+			//$('h4+div').css('background','red')	
+			//兄弟选择器
+			//$('div~p').css('background','red')	
+			
+			//特定位置选择器
+			// $('li').first().css('background','red')
+			// $('li:first').css('background','red')
+			//$('li:last').css('background','red')
+			// $('li:eq(2)').css('background','red')
+			// $('li:even').css('background','red')
+			// $('li:odd').css('background','red')
+			// $('li:gt(2)').css('background','red')
+			// $('li:lt(2)').css('background','red')
+
+			//排除选择器
+			//$('li:not(.child)').css('background','red')
+
+
+			//css() attr() html() val()
+			// $('.box').css('background','blue')
+			// console.log($('.box').attr('style'))
+			// $('.box').html('aaaa')
+			// $('input').val('asdf')
+
+			//属性选择器
+			// $('ul[id]').css('fontSize','20px');//匹配包含某个属性的元素
+			// $('li[data-index="110"]').css('fontSize','30px')
+			// $('li[data-index^="1"]').css('fontSize','30px')
+			//$('li[data-index$="0"]').css('fontSize','30px')
+			//$('li[data-index*="0"]').css('fontSize','30px')
+			$('li[data-index!="10086"]').css('fontSize','30px')
+
+
+
+
+
+
+			// 简写
+		// $(function(){
+
+		// })
+
+		$(window).load(function(){
+			//1.基本选择器
+			//id选择器
+			// $('#box').css('fontSize','20px');
+			// //标签选择器
+			// $('div').css('background','red')
+			// //类选择器
+			// $('.child').css('background',"blue");
+			// $('*').css('border','1px solid #ccc')
+			// //群组选择器
+			// $('div,ul,li').css('background','#ccc')
+
+
+
+			//2.层级选择器
+			//包含选择器
+			//$('div div').css('background','red')
+			//子选择器
+			//$('div>div').css('background','red')
+			//相邻选择器
+			//$('h4+div').css('background','red')	
+			//兄弟选择器
+			//$('div~p').css('background','red')	
+			
+			//特定位置选择器
+			// $('li').first().css('background','red')
+			// $('li:first').css('background','red')
+			//$('li:last').css('background','red')
+			// $('li:eq(2)').css('background','red')
+			// $('li:even').css('background','red')
+			// $('li:odd').css('background','red')
+			// $('li:gt(2)').css('background','red')
+			// $('li:lt(2)').css('background','red')
+
+			//排除选择器
+			//$('li:not(.child)').css('background','red')
+
+
+			//css() attr() html() val()
+			// $('.box').css('background','blue')
+			// console.log($('.box').attr('style'))
+			// $('.box').html('aaaa')
+			// $('input').val('asdf')
+
+			//属性选择器
+			// $('ul[id]').css('fontSize','20px');//匹配包含某个属性的元素
+			// $('li[data-index="110"]').css('fontSize','30px')
+			// $('li[data-index^="1"]').css('fontSize','30px')
+			//$('li[data-index$="0"]').css('fontSize','30px')
+			//$('li[data-index*="0"]').css('fontSize','30px')
+			$('li[data-index!="10086"]').css('fontSize','30px')
+
+
+
+
+
+
+
+			// 简写
+		// $(function(){
+
+		// })
+
+		$(window).load(function(){
+			//1.基本选择器
+			//id选择器
+			// $('#box').css('fontSize','20px');
+			// //标签选择器
+			// $('div').css('background','red')
+			// //类选择器
+			// $('.child').css('background',"blue");
+			// $('*').css('border','1px solid #ccc')
+			// //群组选择器
+			// $('div,ul,li').css('background','#ccc')
+
+
+
+			//2.层级选择器
+			//包含选择器
+			//$('div div').css('background','red')
+			//子选择器
+			//$('div>div').css('background','red')
+			//相邻选择器
+			//$('h4+div').css('background','red')	
+			//兄弟选择器
+			//$('div~p').css('background','red')	
+			
+			//特定位置选择器
+			// $('li').first().css('background','red')
+			// $('li:first').css('background','red')
+			//$('li:last').css('background','red')
+			// $('li:eq(2)').css('background','red')
+			// $('li:even').css('background','red')
+			// $('li:odd').css('background','red')
+			// $('li:gt(2)').css('background','red')
+			// $('li:lt(2)').css('background','red')
+
+			//排除选择器
+			//$('li:not(.child)').css('background','red')
+
+
+			//css() attr() html() val()
+			// $('.box').css('background','blue')
+			// console.log($('.box').attr('style'))
+			// $('.box').html('aaaa')
+			// $('input').val('asdf')
+
+			//属性选择器
+			// $('ul[id]').css('fontSize','20px');//匹配包含某个属性的元素
+			// $('li[data-index="110"]').css('fontSize','30px')
+			// $('li[data-index^="1"]').css('fontSize','30px')
+			//$('li[data-index$="0"]').css('fontSize','30px')
+			//$('li[data-index*="0"]').css('fontSize','30px')
+			$('li[data-index!="10086"]').css('fontSize','30px')
+
+
+
+
+
+
+
+			// 简写
+		// $(function(){
+
+		// })
+
+		$(window).load(function(){
+			//1.基本选择器
+			//id选择器
+			// $('#box').css('fontSize','20px');
+			// //标签选择器
+			// $('div').css('background','red')
+			// //类选择器
+			// $('.child').css('background',"blue");
+			// $('*').css('border','1px solid #ccc')
+			// //群组选择器
+			// $('div,ul,li').css('background','#ccc')
+
+
+
+			//2.层级选择器
+			//包含选择器
+			//$('div div').css('background','red')
+			//子选择器
+			//$('div>div').css('background','red')
+			//相邻选择器
+			//$('h4+div').css('background','red')	
+			//兄弟选择器
+			//$('div~p').css('background','red')	
+			
+			//特定位置选择器
+			// $('li').first().css('background','red')
+			// $('li:first').css('background','red')
+			//$('li:last').css('background','red')
+			// $('li:eq(2)').css('background','red')
+			// $('li:even').css('background','red')
+			// $('li:odd').css('background','red')
+			// $('li:gt(2)').css('background','red')
+			// $('li:lt(2)').css('background','red')
+
+			//排除选择器
+			//$('li:not(.child)').css('background','red')
+
+
+			//css() attr() html() val()
+			// $('.box').css('background','blue')
+			// console.log($('.box').attr('style'))
+			// $('.box').html('aaaa')
+			// $('input').val('asdf')
+
+			//属性选择器
+			// $('ul[id]').css('fontSize','20px');//匹配包含某个属性的元素
+			// $('li[data-index="110"]').css('fontSize','30px')
+			// $('li[data-index^="1"]').css('fontSize','30px')
+			//$('li[data-index$="0"]').css('fontSize','30px')
+			//$('li[data-index*="0"]').css('fontSize','30px')
+			$('li[data-index!="10086"]').css('fontSize','30px')
+
+
+
+
+
+
+			// 简写
+		// $(function(){
+
+		// })
+
+		$(window).load(function(){
+			//1.基本选择器
+			//id选择器
+			// $('#box').css('fontSize','20px');
+			// //标签选择器
+			// $('div').css('background','red')
+			// //类选择器
+			// $('.child').css('background',"blue");
+			// $('*').css('border','1px solid #ccc')
+			// //群组选择器
+			// $('div,ul,li').css('background','#ccc')
+
+
+
+			//2.层级选择器
+			//包含选择器
+			//$('div div').css('background','red')
+			//子选择器
+			//$('div>div').css('background','red')
+			//相邻选择器
+			//$('h4+div').css('background','red')	
+			//兄弟选择器
+			//$('div~p').css('background','red')	
+			
+			//特定位置选择器
+			// $('li').first().css('background','red')
+			// $('li:first').css('background','red')
+			//$('li:last').css('background','red')
+			// $('li:eq(2)').css('background','red')
+			// $('li:even').css('background','red')
+			// $('li:odd').css('background','red')
+			// $('li:gt(2)').css('background','red')
+			// $('li:lt(2)').css('background','red')
+
+			//排除选择器
+			//$('li:not(.child)').css('background','red')
+
+
+			//css() attr() html() val()
+			// $('.box').css('background','blue')
+			// console.log($('.box').attr('style'))
+			// $('.box').html('aaaa')
+			// $('input').val('asdf')
+
+			//属性选择器
+			// $('ul[id]').css('fontSize','20px');//匹配包含某个属性的元素
+			// $('li[data-index="110"]').css('fontSize','30px')
+			// $('li[data-index^="1"]').css('fontSize','30px')
+			//$('li[data-index$="0"]').css('fontSize','30px')
+			//$('li[data-index*="0"]').css('fontSize','30px')
+			$('li[data-index!="10086"]').css('fontSize','30px')
+
+
+
+
+
+
+
+			// 简写
+		// $(function(){
+
+		// })
+
+		$(window).load(function(){
+			//1.基本选择器
+			//id选择器
+			// $('#box').css('fontSize','20px');
+			// //标签选择器
+			// $('div').css('background','red')
+			// //类选择器
+			// $('.child').css('background',"blue");
+			// $('*').css('border','1px solid #ccc')
+			// //群组选择器
+			// $('div,ul,li').css('background','#ccc')
+
+
+
+			//2.层级选择器
+			//包含选择器
+			//$('div div').css('background','red')
+			//子选择器
+			//$('div>div').css('background','red')
+			//相邻选择器
+			//$('h4+div').css('background','red')	
+			//兄弟选择器
+			//$('div~p').css('background','red')	
+			
+			//特定位置选择器
+			// $('li').first().css('background','red')
+			// $('li:first').css('background','red')
+			//$('li:last').css('background','red')
+			// $('li:eq(2)').css('background','red')
+			// $('li:even').css('background','red')
+			// $('li:odd').css('background','red')
+			// $('li:gt(2)').css('background','red')
+			// $('li:lt(2)').css('background','red')
+
+			//排除选择器
+			//$('li:not(.child)').css('background','red')
+
+
+			//css() attr() html() val()
+			// $('.box').css('background','blue')
+			// console.log($('.box').attr('style'))
+			// $('.box').html('aaaa')
+			// $('input').val('asdf')
+
+			//属性选择器
+			// $('ul[id]').css('fontSize','20px');//匹配包含某个属性的元素
+			// $('li[data-index="110"]').css('fontSize','30px')
+			// $('li[data-index^="1"]').css('fontSize','30px')
+			//$('li[data-index$="0"]').css('fontSize','30px')
+			//$('li[data-index*="0"]').css('fontSize','30px')
+			$('li[data-index!="10086"]').css('fontSize','30px')
+
+
+
+
+			
+
+
+
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>基本选择器</title>
+	<script src="jquery-1.12.4.min.js"></script>
+	<script>
+		$(window).load(function(){
+			$('#box').css("background","red");
+			$('h4').css('background','green');
+			$('p').eq(0).css('border','1px solid #fff');
+			$('p').eq(1).css('background','yellow');
+			$('div>div').css('background','blue');
+		})
+	</script>
+</head>
+<body>
+	<div id='box'>
+		<h4>论语</h4>
+		<div>子在川上曰：</div>
+		<p>“逝者如斯夫！</p>
+		<p>不舍昼夜。”</p>
+	</div>
+</body>
+</html>
